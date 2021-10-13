@@ -12,7 +12,6 @@ import reactor.core.publisher.Mono;
 import test.springboot.restclientreactive.data.*;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class SGXService {
@@ -72,8 +71,6 @@ public class SGXService {
     }
 
     public Mono<List<CorporateAction>> getCorporateActions(String ibmcode, int pageStart, int pageSize, String params) {
-        Map<String, ?> parameters = Map.of("ibmcode", ibmcode, "pagestart", pageStart,
-                "pagesize", pageSize, "params", params);
         ParameterizedTypeReference<SGXResponse<List<CorporateAction>>> parameterizedTypeReference =
                 new ParameterizedTypeReference<SGXResponse<List<CorporateAction>>>() {
                 };
